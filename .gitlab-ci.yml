@@ -1,0 +1,25 @@
+image: node:latest
+
+stages:
+  - test
+  - production
+
+test:
+  stage: test
+  script:
+    - npm install -g typescript
+    - npm install -g tslint
+    - tslint -c tslint.json 'src/**/*.ts'
+
+production:
+  type: deploy
+  stage: production
+  image: ruby:latest
+  script:
+    - apt-get update -qy
+    - apt-get install -y ruby-dev
+    - gem install dpl
+    - dpl --provider=heroku --app=project-app50 --api-key=$HEROKU_API_KEY
+  only:
+    - main
+    
