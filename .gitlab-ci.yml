@@ -9,7 +9,7 @@ test:
   script:
     - npm install -g typescript
     - npm install -g tslint
-    - tslint -c tslint.json 'src/**/*.ts'
+    - tslint -c tslint.json 'src/**/*.js'
 
 production:
   type: deploy
