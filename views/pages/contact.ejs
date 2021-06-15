@@ -21,7 +21,12 @@
 		//var emailVal = document.getElementById("inputEmail").value;
 		//var messageVal = document.getElementById("inputMessage").value;
 		//'New contact message from ' + nameVal.toString() + '. Email: ' + emailVal.toString() + '. With message: ' + messageVal.toString()
-        Body: document.getElementById("inputEmail").value + 'hallo',
+        Body: 'New contact message from ' + 
+		document.getElementById("inputName").value + 
+		'. Email: ' + 
+		document.getElementById("inputEmail").value + 
+		'. With message: ' + 
+		document.getElementById("inputMessage").value,
       })
         .then(function (message) {
           alert("mail sent successfully")
