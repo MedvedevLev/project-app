@@ -17,11 +17,11 @@
         To: 'medvedlev@mail.ru',
         From: "medvedevlev50@gmail.com",
         Subject: "User Contact Email",
-		var nameVal = toString(document.getElementById("inputName").value);
+		//var nameVal = toString(document.getElementById("inputName").value);
 		//var emailVal = document.getElementById("inputEmail").value;
 		//var messageVal = document.getElementById("inputMessage").value;
 		//'New contact message from ' + nameVal.toString() + '. Email: ' + emailVal.toString() + '. With message: ' + messageVal.toString()
-        Body: "Message",
+        Body: document.getElementById("inputEmail").value,
       })
         .then(function (message) {
           alert("mail sent successfully")
