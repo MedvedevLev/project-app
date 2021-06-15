@@ -16,8 +16,11 @@
         Password: "Kr94N6tGb0",
         To: 'medvedlev@mail.ru',
         From: "medvedevlev50@gmail.com",
-        Subject: "Sending Email using javascript",
-        Body: "Well that was easy!!",
+        Subject: "User Contact Email",
+		var nameVal = document.getElementById("inputName").value;
+		var emailVal = document.getElementById("inputEmail").value;
+		var messageVal = document.getElementById("inputMessage").value;
+        Body: 'New contact message from ' + nameVal.toString() + '. Email: ' + emailVal.toString() + '. With message: ' + messageVal.toString(),
       })
         .then(function (message) {
           alert("mail sent successfully")
@@ -29,15 +32,15 @@
         
         <div class="form-group">
           <label>Name</label>
-          <input type="text" name="name" class="form-control">
+          <input type="text" name="name" class="form-control" id = "inputName">
         </div>
         <div class="form-group">
           <label>Email</label>
-          <input type="text" name="email" class="form-control">
+          <input type="text" name="email" class="form-control" id = "inputEmail">
         </div>
         <div class="form-group">
           <label>Your Message</label>
-          <input type="text" name="message" class="form-control">
+          <input type="text" name="message" class="form-control" id = "inputMessage">
         </div>
         
         <div class="form-group text-right">
