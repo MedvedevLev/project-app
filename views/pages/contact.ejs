@@ -11,29 +11,35 @@
   <script type="text/javascript">
 	const nodemailer = require('nodemailer');
 
-	async function main() {
+	function main() {
 	
 	let transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
+    host: 'smtp.gmail.com',
     port: 587,
     secure: false, // true for 465, false for other ports
     auth: {
-      user: "medvedevlev50@gmail.com", // generated ethereal user
-      pass: "Kr94N6tGb0", // generated ethereal password
+      user: 'medvedevlev50@gmail.com', // generated ethereal user
+      pass: 'Kr94N6tGb0', // generated ethereal password
     },
   });
 	
-	let info = await transporter.sendMail({
+	let mailOptions = await transporter.sendMail({
 		from: '"Fred Foo 👻" <medvedevlev50@gmail.com>', // sender address
-		to: "medvedlev@mail.ru", // list of receivers
-		subject: "Hello ✔", // Subject line
-		text: "Hello world?", // plain text body
-		html: "<b>Hello world?</b>", // html body
+		to: 'medvedlev@mail.ru', // list of receivers
+		subject: 'Hello ✔', // Subject line
+		text: 'Hello world?', // plain text body
+		html: '<b>Hello world?</b>', // html body
   });
 	
-	  console.log("Message sent: %s", info.messageId);
-  // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
-  alert("Thank you! We will contact you back shortly!");
+	transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+          return console.log(error);
+      }
+      console.log('Message sent: %s', info.messageId);   
+      console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+
+      res.render('contact', {msg:'Email has been sent'});
+	}
 	}
 	
   </script>
@@ -54,7 +60,7 @@
         </div>
         
         <div class="form-group text-right">
-          <input type = "button" value = "Send Email" onclick="alert("Thank you! We will contact you back shortly!")" />
+          <input type = "button" value = "Send Email" onclick="main()" />
         </div>
 
       </form>
