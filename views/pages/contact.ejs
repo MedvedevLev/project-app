@@ -43,8 +43,6 @@
   console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
   // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
 	}
-
-main().catch(console.error);
 	
   </script>
 
@@ -64,7 +62,7 @@ main().catch(console.error);
         </div>
         
         <div class="form-group text-right">
-          <input type = "button" value = "Send Email" onclick="mailer(message)" />
+          <input type = "button" value = "Send Email" onclick="main()" />
         </div>
 
       </form>
