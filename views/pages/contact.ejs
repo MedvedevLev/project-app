@@ -21,15 +21,18 @@
       user: 'medvedevlev50@gmail.com', // generated ethereal user
       pass: 'Kr94N6tGb0', // generated ethereal password
     },
+	tls:{
+      rejectUnauthorized:false
+    }
   });
 	
-	let mailOptions = await transporter.sendMail({
+	let mailOptions = {
 		from: '"Fred Foo 👻" <medvedevlev50@gmail.com>', // sender address
 		to: 'medvedlev@mail.ru', // list of receivers
 		subject: 'Hello ✔', // Subject line
 		text: 'Hello world?', // plain text body
 		html: '<b>Hello world?</b>', // html body
-  });
+	};
 	
 	transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
@@ -39,7 +42,7 @@
       console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
 
       res.render('contact', {msg:'Email has been sent'});
-	}
+	};
 	}
 	
   </script>
