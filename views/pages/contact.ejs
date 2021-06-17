@@ -11,15 +11,15 @@
   <script>
 	var nodemailer = require('nodemailer');
 
-	function main() {
+	function sendEmail() {
 	
 	let transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
+    host: 'smtp.ethereal.email',
     port: 587,
     secure: false, // true for 465, false for other ports
     auth: {
-      user: 'medvedevlev50@gmail.com', // generated ethereal user
-      pass: 'Kr94N6tGb0', // generated ethereal password
+      user: 'levi.emard@ethereal.email', // generated ethereal user
+      pass: 'ZzJNQ2s4wJsKrmtjJz', // generated ethereal password
     },
 	tls:{
       rejectUnauthorized:false
@@ -27,7 +27,7 @@
   });
 	
 	let mailOptions = {
-		from: '"Fred Foo 👻" <medvedevlev50@gmail.com>', // sender address
+		from: '"Fred Foo 👻" <levi.emard@ethereal.email>', // sender address
 		to: 'medvedlev@mail.ru', // list of receivers
 		subject: 'Hello ✔', // Subject line
 		text: 'Hello world?', // plain text body
@@ -59,7 +59,7 @@
         </div>
         
         <div class="form-group text-right">
-          <input type = "button" value = "Send Email" onclick="main()" />
+          <input type = "button" value = "Send Email" onclick="sendEmail()" />
         </div>
 
       </form>
