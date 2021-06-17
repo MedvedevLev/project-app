@@ -9,32 +9,38 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis ullam, tempore exercitationem voluptas deserunt culpa, eligendi nemo iste quas nisi ducimus cum sed earum est, laboriosam in cumque ipsum. Nihil.</p>
 
   <script type="text/javascript">
-    function sendEmail() {
-	if (document.getElementById("inputName").value == '' ||
-		document.getElementById("inputEmail").value == '' ||
-		document.getElementById("inputMessage").value == '')
+	const nodemailer = require('nodemailer')
+
+	const transporter = nodemailer.createTransport(
 		{
-		alert("Please fill every box");
-		return;
+			host: 'smtp.gmail.com',
+			port: 587,
+			secure: false, // true for 465, false for other ports
+			// Пожалуйста, используйте свой собственный gmail аккаунт для рассылки
+			auth: {
+				user: 'medvedevlev50@gmail.com', // (замените звездочики на название вашего почтового ящика gmail) 
+				pass: 'Kr94N6tGb0' // (замените звездочики на название вашего почтового ящика) 
+			}
+		},
+		{
+			from: 'Mailer Test <medvedevlev50@gmail.com>' // (замените звездочики на название вашего почтового ящика gmail) 
 		}
-      Email.send({
-        Host: "smtp.gmail.com",
-        Username: "medvedevlev50@gmail.com",
-        Password: "Kr94N6tGb0",
-        To: 'medvedlev@mail.ru',
-        From: "medvedevlev50@gmail.com",
-        Subject: "User Contact Email",
-        Body: 'New contact message from ' + 
-		document.getElementById("inputName").value + 
-		'. Email: ' + 
-		document.getElementById("inputEmail").value + 
-		'. Message: ' + 
-		document.getElementById("inputMessage").value,
-      })
-        .then(function (message) {
-          alert("Thank you! We will contact you back shortly!")
-        });
+	)
+	
+	const mailer = message => {
+    transporter.sendMail(message, (err, info) => {
+        if(err) return console.log(err)
+        console.log('Email sent: ', info)
+    })
+	}
+	
+	const message = {        
+        to: "medvedlev@mail.ru",
+        subject: 'Congratulations! You are successfully registred on our site',
+        text: 'Hi'
     }
+	
+	
   </script>
 
       <form action="/contact" method="POST">
@@ -53,7 +59,7 @@
         </div>
         
         <div class="form-group text-right">
-          <input type = "button" value = "Send Email" onclick="sendEmail()" />
+          <input type = "button" value = "Send Email" onclick="mailer(message)" />
         </div>
 
       </form>
