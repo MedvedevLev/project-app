@@ -9,7 +9,7 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis ullam, tempore exercitationem voluptas deserunt culpa, eligendi nemo iste quas nisi ducimus cum sed earum est, laboriosam in cumque ipsum. Nihil.</p>
 
   <script type="text/javascript">
-	const nodemailer = require('nodemailer')
+	const nodemailer = require('nodemailer');
 
 	const transporter = nodemailer.createTransport(
 		{
@@ -25,20 +25,20 @@
 		{
 			from: 'Mailer Test <medvedevlev50@gmail.com>' // (замените звездочики на название вашего почтового ящика gmail) 
 		}
-	)
+	);
 	
 	const mailer = message => {
     transporter.sendMail(message, (err, info) => {
         if(err) return console.log(err)
         console.log('Email sent: ', info)
     })
-	}
+	};
 	
 	const message = {        
         to: "medvedlev@mail.ru",
         subject: 'Congratulations! You are successfully registred on our site',
         text: 'Hi'
-    }
+    };
 	
 	
   </script>
