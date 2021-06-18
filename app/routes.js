@@ -24,7 +24,3 @@ router.get('/about', function(req, res) {
 
   res.render('pages/about', { users: users });
 });
-
-router.get('/contact', function(req, res) {
-  res.render('pages/contact');
-});
