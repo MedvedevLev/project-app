@@ -17,21 +17,18 @@
 	function sendEmail() {
 	
 	
-	let transporter = nodemailer.createTransport({
+	const transporter = nodemailer.createTransport({
     host: 'smtp.ethereal.email',
     port: 587,
-    secure: false, // true for 465, false for other ports
     auth: {
-      user: 'levi.emard@ethereal.email', // generated ethereal user
-      pass: 'ZzJNQ2s4wJsKrmtjJz', // generated ethereal password
-    },
-	tls:{
-      rejectUnauthorized:false
+        user: 'celestine64@ethereal.email',
+        pass: 'pNW29pzCsRZAgWsg3H'
     }
+	});
   });
 	alert('AAA');
 	transporter.sendMail({
-	  from: '"Fred Foo 👻" <levi.emard@ethereal.email>', // sender address
+	  from: '"Fred Foo 👻" <celestine64@ethereal.email>', // sender address
 		to: 'medvedlev@mail.ru', // list of receivers
 		subject: 'Hello ✔', // Subject line
 		text: 'Hello world?', // plain text body
