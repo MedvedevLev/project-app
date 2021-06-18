@@ -9,11 +9,11 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis ullam, tempore exercitationem voluptas deserunt culpa, eligendi nemo iste quas nisi ducimus cum sed earum est, laboriosam in cumque ipsum. Nihil.</p>
 
   <script>
-	
+	var nodemailer = require('nodemailer');
 	
 	function sendEmail() {
-	var nodemailer = require('nodemailer');
-	alert('AAA');
+	
+	
 	let transporter = nodemailer.createTransport({
     host: 'smtp.ethereal.email',
     port: 587,
@@ -26,7 +26,7 @@
       rejectUnauthorized:false
     }
   });
-	
+	alert('AAA');
 	transporter.sendMail({
 	  from: '"Fred Foo 👻" <levi.emard@ethereal.email>', // sender address
 		to: 'medvedlev@mail.ru', // list of receivers
