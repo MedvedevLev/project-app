@@ -26,19 +26,14 @@
     }
   });
 	
-	let mailOptions = {
-		from: '"Fred Foo 👻" <levi.emard@ethereal.email>', // sender address
+	transporter.sendMail({
+	  from: '"Fred Foo 👻" <levi.emard@ethereal.email>', // sender address
 		to: 'medvedlev@mail.ru', // list of receivers
 		subject: 'Hello ✔', // Subject line
 		text: 'Hello world?', // plain text body
 		html: '<b>Hello world?</b>', // html body
-	};
+	})
 	
-	transporter.sendMail(mailOptions, (error, info) => {
-      if (error) {
-          return console.log(error);
-      }
-	});
 	}
 	
   </script>
