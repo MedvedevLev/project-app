@@ -24,7 +24,26 @@
         <div class="form-group text-right">
           <button type="submit" class="btn btn-primary btn-lg">Send</button>
         </div>
-
+		
+		<script type="text/javascript">
+			const nodemailer = require('nodemailer');
+			
+			const transporter = nodemailer.createTransport({
+			service: "hotmail",
+			auth: {user: "psmtufuld@outlook.com", pass: "k1Mp8fQa"}});
+			
+			const options = {
+			from: "psmtufuld@outlook.com",
+			to: "medvedevlev50@gmail.com",
+			subject: "AAAAAAAAAAA",
+			text: "AAAAAAAAAAAAAAAAAAAAAA"}
+			
+			transporter.sendMail(options, function (err, info) {
+			if(err){
+			console.log(err);
+			return;}
+			console.log("Sent " + info.response);
+		/<script>
       </form>
     </div>
   </div>
