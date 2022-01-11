@@ -22,10 +22,12 @@
         </div>
 
         <div class="form-group text-right">
-          <button type="submit" class="btn btn-primary btn-lg">Send</button>
+          <input type = "button" value = "Send Email" onclick="sendEmail()" />
         </div>
+
 		
 		<script type="text/javascript">
+		    function sendEmail() {
 			const nodemailer = require('nodemailer');
 			
 			const transporter = nodemailer.createTransport({
@@ -42,7 +44,8 @@
 			if(err){
 			console.log(err);
 			return;}
-			console.log("Sent " + info.response);
+			console.log("Sent " + info.response);}
+			alert("AAAAAAAAAAAAAAAAAAA");}
 		/<script>
       </form>
     </div>
