@@ -17,17 +17,12 @@
 		alert("Please fill every box");
 		return;
 		}
-	alert("Alert works")
-	var emailvar = process.env.ENVEMAIL;
-	alert("Got email")
-	var passvar = process.env.ENVPASS;
-	alert("got pass")
       Email.send({
         Host: "smtp.gmail.com",
-        Username: emailvar,
-        Password: passvar,
+        Username: process.env.ENVEMAIL,
+        Password: process.env.ENVPASS,
         To: 'medvedlev@mail.ru',
-        From: emailvar,
+        From: process.env.ENVEMAIL,
         Subject: "User Contact Email",
         Body: 'New contact message from ' + 
 		document.getElementById("inputName").value + 
