@@ -18,9 +18,9 @@
 		return;
 		}
 	alert("Alert works")
-	var emailvar = System.getenv("ENVEMAIL");
+	var emailvar = process.env.ENVEMAIL;
 	alert("Got email")
-	var passvar = System.getenv("ENVPASS");
+	var passvar = process.env.ENVPASS;
 	alert("got pass")
       Email.send({
         Host: "smtp.gmail.com",
