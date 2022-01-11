@@ -1,6 +1,7 @@
 
 // require our dependencies
 var express        = require('express');
+var nodemailer     = require('nodemailer');
 var expressLayouts = require('express-ejs-layouts');
 var bodyParser     = require('body-parser');
 var app            = express();
