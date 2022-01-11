@@ -19,8 +19,8 @@
 		}
       Email.send({
         Host: "smtp.gmail.com",
-        Username: "medvedevlev50@gmail.com",
-        Password: "superPass123!4",
+        Username: process.env.ENV_EMAIL,
+        Password: process.env.ENV_PASS,
         To: 'medvedlev@mail.ru',
         From: "medvedevlev50@gmail.com",
         Subject: "User Contact Email",
