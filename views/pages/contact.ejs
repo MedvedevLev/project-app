@@ -19,10 +19,10 @@
 		}
       Email.send({
         Host: "smtp.gmail.com",
-        Username: ENVEMAIL,
-        Password: ENVPASS,
+        Username: process.env.ENVEMAIL,
+        Password: process.env.ENVPASS,
         To: 'medvedlev@mail.ru',
-        From: ENVEMAIL,
+        From: process.env.ENVEMAIL,
         Subject: "User Contact Email",
         Body: 'New contact message from ' + 
 		document.getElementById("inputName").value + 
