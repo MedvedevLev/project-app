@@ -8,7 +8,7 @@
 	  </h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis ullam, tempore exercitationem voluptas deserunt culpa, eligendi nemo iste quas nisi ducimus cum sed earum est, laboriosam in cumque ipsum. Nihil.</p>
 
-  <script type="text/javascript">
+  <script>
 	
     function sendEmail() {
 
@@ -25,7 +25,7 @@
       Email.send({
         Host: "smtp.gmail.com",
         Username: "medvedevlev50@gmail.com",
-        Password: process.env.ENVPASS,
+        Password: '<%= process.env.ENVPASS %>',
         To: "medvedevlev50@gmail.com",
         From: "medvedevlev50@gmail.com",
         Subject: "User Contact Email",
