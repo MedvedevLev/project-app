@@ -9,8 +9,11 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis ullam, tempore exercitationem voluptas deserunt culpa, eligendi nemo iste quas nisi ducimus cum sed earum est, laboriosam in cumque ipsum. Nihil.</p>
 
   <script type="text/javascript">
-	require('dotenv').config();
+	
     function sendEmail() {
+
+    //require('dotenv').config();
+
 	if (document.getElementById("inputName").value == '' ||
 		document.getElementById("inputEmail").value == '' ||
 		document.getElementById("inputMessage").value == '')
@@ -18,12 +21,13 @@
 		alert("Please fill every box");
 		return;
 		}
+
       Email.send({
         Host: "smtp.gmail.com",
-        Username: process.env.ENVEMAIL,
+        Username: "medvedevlev50@gmail.com",
         Password: process.env.ENVPASS,
-        To: process.env.ENVEMAIL,
-        From: process.env.ENVEMAIL,
+        To: "medvedevlev50@gmail.com",
+        From: "medvedevlev50@gmail.com",
         Subject: "User Contact Email",
         Body: 'New contact message from ' + 
 		document.getElementById("inputName").value + 
