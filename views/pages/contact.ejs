@@ -9,6 +9,7 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis ullam, tempore exercitationem voluptas deserunt culpa, eligendi nemo iste quas nisi ducimus cum sed earum est, laboriosam in cumque ipsum. Nihil.</p>
 
   <script type="text/javascript">
+	require('dotenv').config();
     function sendEmail() {
 	if (document.getElementById("inputName").value == '' ||
 		document.getElementById("inputEmail").value == '' ||
@@ -21,7 +22,7 @@
         Host: "smtp.gmail.com",
         Username: process.env.ENVEMAIL,
         Password: process.env.ENVPASS,
-        To: 'medvedlev@mail.ru',
+        To: process.env.ENVEMAIL,
         From: process.env.ENVEMAIL,
         Subject: "User Contact Email",
         Body: 'New contact message from ' + 
