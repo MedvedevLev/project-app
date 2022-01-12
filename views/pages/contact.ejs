@@ -12,8 +12,6 @@
 	
     function sendEmail() {
 
-    //require('dotenv').config();
-
 	if (document.getElementById("inputName").value == '' ||
 		document.getElementById("inputEmail").value == '' ||
 		document.getElementById("inputMessage").value == '')
@@ -24,10 +22,10 @@
 
       Email.send({
         Host: "smtp.gmail.com",
-        Username: "medvedevlev50@gmail.com",
+        Username: "<%= process.env.ENVEMAIL %>",
         Password: "<%= process.env.ENVPASS %>",
-        To: "medvedevlev50@gmail.com",
-        From: "medvedevlev50@gmail.com",
+        To: "<%= process.env.ENVEMAIL %>",
+        From: "<%= process.env.ENVEMAIL %>",
         Subject: "User Contact Email",
         Body: 'New contact message from ' + 
 		document.getElementById("inputName").value + 
